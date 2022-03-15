@@ -7,7 +7,7 @@ const EditContact = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col">
-                            <p className="h4 text-primary fw-bold">
+                            <p className="h4 text-warning fw-bold">
                                 Edit Contact
                             </p>
                             <p className="fst-italic">
@@ -70,7 +70,7 @@ const EditContact = () => {
                                         <option value="">Select a Group</option>
                                     </select>
                                 </div>
-                                <button className="btn btn-primary me-2 mt-2">
+                                <button className="btn btn-warning me-2 mt-2">
                                     Update
                                 </button>
                                 <Link
@@ -80,6 +80,13 @@ const EditContact = () => {
                                     Cancel
                                 </Link>
                             </form>
+                        </div>
+                        <div className="col-md-6">
+                            <img
+                                src="https://pluspng.com/img-png/user-png-icon-young-user-icon-2400.png"
+                                alt="user"
+                                className="img-fluid contact-img my-5"
+                            />
                         </div>
                     </div>
                 </div>
