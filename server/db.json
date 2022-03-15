@@ -1,0 +1,70 @@
+{
+    "contacts": [
+        {
+            "id": "lasdf23",
+            "name": "Brad Smith",
+            "photo": "https://pluspng.com/img-png/user-png-icon-young-user-icon-2400.png",
+            "mobile": "9879879879",
+            "email": "brad@gmail.com",
+            "title": "Software Engineer",
+            "company": "THX",
+            "groupId": "1"
+        },
+        {
+            "id": "123f3s",
+            "name": "Jane Jett",
+            "photo": "https://www.pngkit.com/png/full/115-1150342_user-avatar-icon-iconos-de-mujeres-a-color.png",
+            "mobile": "65498798465",
+            "email": "jane@gmail.com",
+            "title": "Software Developer",
+            "company": "THX",
+            "groupId": "1"
+        },
+        {
+            "id": "12fasdf",
+            "name": "Blake Bash",
+            "photo": "https://secure.webtoolhub.com/static/resources/icons/set108/b5cdab07.png",
+            "mobile": "987546548",
+            "email": "blake@gmail.com",
+            "title": "Web Designer",
+            "company": "THX",
+            "groupId": "1"
+        },
+        {
+            "id": "asf23rf1",
+            "name": "Jordan Run",
+            "photo": "https://www.shareicon.net/data/2016/09/01/822711_user_512x512.png",
+            "mobile": "9876546521",
+            "email": "jordan@gmail.com",
+            "title": "Team Manager",
+            "company": "THX",
+            "groupId": "1"
+        }
+    ],
+    "groups": [
+        {
+            "id": "1",
+            "name": "Colleague"
+        },
+        {
+            "id": "2",
+            "name": "Friend"
+        },
+        {
+            "id": "3",
+            "name": "Family"
+        },
+        {
+            "id": "4",
+            "name": "Service"
+        },
+        {
+            "id": "5",
+            "name": "Community"
+        },
+        {
+            "id": "6",
+            "name": "Network"
+        }
+    ]
+}
