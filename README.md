@@ -22,7 +22,10 @@
 
 -   ### API
     -   GET all contacts: -> GET http://localhost:3006/contacts
-    -   GET single contact: -> GET http://localhost:3006/contacts/{id}
+    -   GET single contact: -> GET http://localhost:3006/contacts/{contactId}
     -   Create a contact: -> POST http://localhost:3006/contacts
-    -   Update a contact: -> PUT http://localhost:3006/contacts/{id}
-    -   Delete a contact: -> DELETE http://localhost:3006/contacts/{id}
+    -   Update a contact: -> PUT http://localhost:3006/contacts/{contactId}
+    -   Delete a contact: -> DELETE http://localhost:3006/contacts/{contactId}
+    ***
+    -   Get all groups: -> GET http://localhost:3006/groups
+    -   Get single group: -> GET http://localhost:3006/groups{groupId}
