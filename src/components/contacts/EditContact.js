@@ -1,8 +1,49 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
+import { ContactService } from "../../services/ContactService";
 const EditContact = () => {
+    // grab contactId from url params so we can update it
+    const { contactId } = useParams();
+
+    const [state, setState] = useState({
+        loading: true,
+        contact: {
+            name: "",
+            photo: "",
+            mobile: "",
+            email: "",
+            company: "",
+            title: "",
+            groupId: "",
+        },
+        groups: [],
+        errorMessage: "",
+    });
+
+    const getContact = async () => {
+        try {
+            setState({ ...state, loading: true });
+            const response = await ContactService.getContact(contactId);
+            setState({
+                ...state,
+                loading: false,
+                contact: response.data,
+            });
+        } catch (error) {
+            console.log(error);
+            setState({ ...state, loading: false, errorMessage: error.message });
+        }
+    };
+
+    useEffect(() => {
+        getContact();
+    }, [contactId]);
+
+    const { loading, contact, groups, errorMessage } = state;
+
     return (
         <div>
+            <pre>{JSON.stringify(contact)}</pre>
             <section className="add-contact p-3">
                 <div className="container">
                     <div className="row">

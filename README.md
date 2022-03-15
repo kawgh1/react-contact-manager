@@ -1,5 +1,7 @@
 ### React Contact Manager
 
+-   based on project https://www.youtube.com/watch?v=ZfqnUm7w6ig by UiBrains Technologies
+
 -   basic CRUD app, passing data through routes, axios, etc.
 -   npm install bootstrap
 -   npm install @fortawesome/fontawesome-free
