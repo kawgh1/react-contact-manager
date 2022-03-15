@@ -1,12 +1,18 @@
+import { queryAllByAltText } from "@testing-library/react";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ContactService } from "../../services/ContactService";
 import Spinner from "../spinner/Spinner";
 
 const ContactList = () => {
+    const [searchQuery, setSearchQuery] = useState({
+        text: "",
+    });
+
     const [state, setState] = useState({
         loading: false,
         contacts: [],
+        filteredContacts: [],
         errorMessage: "",
     });
 
@@ -16,7 +22,12 @@ const ContactList = () => {
             setState({ ...state, loading: true });
             const response = await ContactService.getAllContacts();
             console.log(response.data);
-            setState({ ...state, loading: false, contacts: response.data });
+            setState({
+                ...state,
+                loading: false,
+                contacts: response.data,
+                filteredContacts: response.data,
+            });
         } catch (error) {
             console.log(error);
             setState({
@@ -39,7 +50,12 @@ const ContactList = () => {
                 // since we deleted data on backend we need to refetch the data on the front end, showing contact removed
                 setState({ ...state, loading: true });
                 const response = await ContactService.getAllContacts();
-                setState({ ...state, loading: false, contacts: response.data });
+                setState({
+                    ...state,
+                    loading: false,
+                    contacts: response.data,
+                    filteredContacts: response.data,
+                });
             }
         } catch (error) {
             console.log(error);
@@ -47,11 +63,27 @@ const ContactList = () => {
         }
     };
 
-    const { loading, contacts, errorMessage } = state;
+    // Search Contacts
+    const searchContacts = (event) => {
+        setSearchQuery({ ...searchQuery, text: event.target.value });
+        const theContacts = state.contacts.filter((contact) =>
+            contact.name
+                .toLowerCase()
+                .includes(event.target.value.toLowerCase())
+        );
+        console.log("search results = ", theContacts);
+        setState({
+            ...state,
+            filteredContacts: theContacts,
+        });
+    };
+
+    const { loading, contacts, filteredContacts, errorMessage } = state;
 
     return (
         <div>
             {/* Content, Search */}
+            <pre>"search" {JSON.stringify(searchQuery)}</pre>
             <section className="contact-search p-3">
                 <div className="container">
                     <div className="grid">
@@ -84,6 +116,9 @@ const ContactList = () => {
                                                 type="text"
                                                 className="form-control"
                                                 placeholder="Search"
+                                                name="text"
+                                                value={searchQuery.text}
+                                                onChange={searchContacts}
                                             />
                                         </div>
                                     </div>
@@ -112,8 +147,16 @@ const ContactList = () => {
                     <section className="contact-list">
                         <div className="container">
                             <div className="row">
+                                {/* no search filter, just display contacts
+                                
                                 {contacts.length > 0 &&
-                                    contacts.map((contact) => (
+                                    contacts.map((contact) => ( 
+                                        
+                                        */}
+
+                                {/* Search Filter */}
+                                {filteredContacts.length > 0 &&
+                                    filteredContacts.map((contact) => (
                                         <div
                                             className="col-md-6"
                                             key={contact.id}
