@@ -71,6 +71,7 @@ const AddContact = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col">
+                            <pre>{JSON.stringify(contact)}</pre>
                             <p className="h4 text-success fw-bold">
                                 Create Contact
                             </p>

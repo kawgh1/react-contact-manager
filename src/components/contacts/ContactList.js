@@ -31,6 +31,22 @@ const ContactList = () => {
         fetchData();
     }, []);
 
+    // delete contact
+    const handleDelete = async (contactId) => {
+        try {
+            const response = await ContactService.deleteContact(contactId);
+            if (response) {
+                // since we deleted data on backend we need to refetch the data on the front end, showing contact removed
+                setState({ ...state, loading: true });
+                const response = await ContactService.getAllContacts();
+                setState({ ...state, loading: false, contacts: response.data });
+            }
+        } catch (error) {
+            console.log(error);
+            setState({ ...state, loading: false, errorMessage: error.message });
+        }
+    };
+
     const { loading, contacts, errorMessage } = state;
 
     return (
@@ -155,7 +171,14 @@ const ContactList = () => {
                                                             >
                                                                 <i className="fa fa-pen text-white"></i>
                                                             </Link>
-                                                            <button className="btn btn-danger my-1">
+                                                            <button
+                                                                className="btn btn-danger my-1"
+                                                                onClick={() => {
+                                                                    handleDelete(
+                                                                        contact.id
+                                                                    );
+                                                                }}
+                                                            >
                                                                 <i className="fa fa-trash"></i>
                                                             </button>
                                                         </div>

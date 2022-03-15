@@ -15,9 +15,22 @@ export class ContactService {
         return axios.get(dataURL);
     }
 
-    // use in AddContact
+    // used in AddContact
     static createContact(contact) {
         const dataURL = `${this.serverURL}/contacts`;
         return axios.post(dataURL, contact);
+    }
+
+    // used in EditContact
+    static updateContact(contact, contactId) {
+        const dataURL = `${this.serverURL}/contacts/${contactId}`;
+        return axios.put(dataURL, contact);
+    }
+
+    // used in ContactList
+    static deleteContact(contactId) {
+        const dataURL = `${this.serverURL}/contacts/${contactId}`;
+        return axios.delete(dataURL)
+
     }
 }

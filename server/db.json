@@ -4,11 +4,11 @@
       "id": "lasdf23",
       "name": "Brad Smith",
       "photo": "https://pluspng.com/img-png/user-png-icon-young-user-icon-2400.png",
-      "mobile": "9879879879",
+      "mobile": "11111111112",
       "email": "brad@gmail.com",
       "title": "Software Engineer",
       "company": "THX",
-      "groupId": "1"
+      "groupId": "6"
     },
     {
       "id": "123f3s",
@@ -49,16 +49,6 @@
       "title": "Supervisor",
       "groupId": "5",
       "id": "sYX9rg4"
-    },
-    {
-      "name": "Rebecca Steele",
-      "photo": "https://cdn.onlinewebfonts.com/svg/img_529937.png",
-      "mobile": "654654984465",
-      "email": "becca@gmail.com",
-      "company": "THX",
-      "title": "VP Finance",
-      "groupId": "1",
-      "id": "C1cXQq2"
     },
     {
       "name": "Jimmy Dean",
