@@ -12,6 +12,8 @@
 -   npm install axios
 -   npm install react-router-dom
 
+### - have to run 'npm start' in the root folder and 'npm start' in the root/server folder to get the backend running
+
 ### "Backend"
 
 -   json-server
